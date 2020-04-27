@@ -2,6 +2,9 @@
 <span>{{ getError('email')}}</span>
 <span>{{ getError('password')}}</span>
 <form [formGroup]="formGroup">
+  <input name="tipo"
+  formControlName="tipo"
+  type="hidden" />
   <label for="email">E-mail</label>
   <input name="email"
         formControlName="email"

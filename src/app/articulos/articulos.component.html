@@ -9,7 +9,7 @@
           <h5 style="display: inline;" class="card-title">{{item.name}} {{item.marca}} {{item.fragancia}}</h5>
           <span class="badge badge-info" style="float:right;">{{item.categoria}}</span>
           <p class="card-text">{{item.description}}</p>
-          <a href="#" class="btn btn-info">$ {{item.price}} <i class="fas fa-cart-plus"></i></a>
+          <button class="btn btn-info" id={{item.id}} (click)="enviarProducto($event)">$ {{item.price}} <i class="fas fa-cart-plus" ></i></button>
           <span class="badge badge-dark" style="float:right;">{{item.code}}</span>
         </div>
       </div>

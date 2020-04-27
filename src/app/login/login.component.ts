@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ArticuloService } from '../service/articulo.service';
 import { TokenStoreService } from './token-store.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +12,13 @@ import { TokenStoreService } from './token-store.service';
 export class LoginComponent implements OnInit {
 
   public formGroup: FormGroup;
-
+  public tipo:string;
 
   constructor( private formBuilder: FormBuilder,private articuloService:ArticuloService,
-    private tokenStore:TokenStoreService ) { }
+    private tokenStore:TokenStoreService,route: ActivatedRoute ) {
+      console.log(route)
+      route.url.subscribe(url=>this.tipo=url[0].path)
+    }
 
   public ngOnInit() {
     this.buildForm();
@@ -25,7 +29,7 @@ export class LoginComponent implements OnInit {
     const minPassLength = 4;
     this.formGroup = this.formBuilder.group({
 
-
+    tipo:this.tipo,
     email: ['', [
       Validators.required, Validators.email
     ]],
@@ -38,7 +42,7 @@ export class LoginComponent implements OnInit {
     const user = this.formGroup.value;
     this.articuloService.sendLoguin(user)
     .subscribe(res => {
-      console.log(res.token)
+      console.log(res)
       this.tokenStore.dispatch(res.token)});
 
   }

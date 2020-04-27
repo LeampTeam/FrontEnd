@@ -4,7 +4,7 @@ import { from ,of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { HttpClient } from '@angular/common/http';
-import {Articulo} from '../articulos/articulo'
+import {Articulo} from '../../model/articulo'
 
 
 
@@ -24,6 +24,13 @@ export class ArticuloService {
   }
   sendLoguin(user:any){
    return this.http.post<any>('http://127.0.0.1:4000/usuario/loguin/',user)
+  }
+  enviarProducto(productoId:String,cantidad:Number){
+    let producto={
+      id:productoId,
+      cantidad:cantidad
+    }
+    return this.http.post<any>('http://127.0.0.1:4000/shop/cargaProductos/',producto)
   }
 
 

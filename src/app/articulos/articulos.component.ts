@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Articulo} from './articulo'
+import {Articulo} from '../../model/articulo'
 import {ArticuloService} from '../service/articulo.service'
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-articulos',
@@ -10,7 +11,9 @@ import {ArticuloService} from '../service/articulo.service'
 export class ArticulosComponent implements OnInit {
   public Articulos:Articulo[]
 
-  constructor(private articuloService:ArticuloService) {
+  constructor(private articuloService:ArticuloService
+    ,private router: Router
+    ,private route: ActivatedRoute) {
 
   }
 
@@ -25,6 +28,16 @@ export class ArticulosComponent implements OnInit {
     }
     )
 
+  }
+  enviarProducto(event){
+    console.log(event)
+    let id=event.path[0].id;
+    console.log(id)
+    this.articuloService.enviarProducto(id,1).subscribe(res=>{
+      console.log(res)
+      this.router.navigate(['shop']);
+
+    })
   }
 
 }

@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { ArticulosComponent } from './articulos/articulos.component';
 import {  FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptorService } from './login/auth-interceptor.service';
+import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { AuthInterceptorService } from './login/auth-interceptor.service';
     AppComponent,
     LoginComponent,
     ArticulosComponent,
+    HomeComponent,
 
   ],
   imports: [
@@ -22,7 +25,8 @@ import { AuthInterceptorService } from './login/auth-interceptor.service';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
