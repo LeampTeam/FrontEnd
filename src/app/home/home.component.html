@@ -1,1 +1,129 @@
-<p>home works!</p>
+<header>
+  <form action="Post">
+    <div id="buscadorArticulos" class=" container col-md-12 row justify-content-end">
+      <input type="text" placeholder="Busca tus articulos">
+      <button type="submit" id="botonBuscar" class="btn btn-secondary">Buscar</button>
+    </div>
+
+
+  <!-- Loguearse -->
+  <div id="login">
+    <div id="boton" class="container col-md-12 row justify-content-end">
+      <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#Registro"
+        href="formularioregistro.html">Registrate</a>
+  </div>
+
+  <!-- Registrarse -->
+    <div id="boton" class="container col-md-12 row justify-content-end">
+      <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#InicioSesion"
+        href="formularioingreso.html">Iniciar Sesion</a>
+    </div>
+  </div>
+</form>
+</header>
+
+<div class="container col-md-6" id="nav">
+  <ul class="nav nav-pills nav-fill">
+    <!-- <li class="nav-item">
+      <a id="boton1" class="nav-link active btn btn-primary" onclick="precionarBoton(1)" href="#">Inicio</a>
+    </li> -->
+    <li class="nav-item">
+      <a id="boton2" class="nav-link btn btn-primary"  routerLink="/articulo" routerLinkActive="active">Productos</a>
+    </li>
+    <li class="nav-item">
+      <a id="boton3" class="nav-link btn btn-primary" routerLink="/articulo" routerLinkActive="active">Promos</a>
+    </li>
+  </ul>
+</div>
+<!-- Modal Sesion -->
+<div class="modal fade" id="InicioSesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <form class="form-reg" action="">
+            <div id="logo">
+                <img src="/assets/marca/limp.png" width="100px">
+              </div>
+              <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm">Contraseña</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-sm">
+                  </div>
+                  <div class="btn-form">
+                      <button type="submit" class="btn btn-primary">Ingresar</button>
+                    </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Registro -->
+<div class="modal fade" id="Registro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <form class="form-reg " action="">
+          <div id="logo">
+            <img src="/assets/marca/limp.png" alt="" width="100px">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <!-- <input class="input" type="text" placeholder="&#128100;Nombre" required autofocus> -->
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Apellido</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <!-- <input class="input" type="text" placeholder="&#128100;Apellidos" required autofocus> -->
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" required aria-label="Username"
+              aria-describedby="addon-wrapping">
+          </div>
+          <!-- <input class="input" type="email" placeholder="&#9993;Correo Electronico"> -->
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Telefono</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <!-- <input class="input" type="text" placeholder="&#128222;Telefono" required > -->
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Contraseña</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="btn-form">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

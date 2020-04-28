@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Articulo} from '../../model/articulo'
-import {ArticuloService} from '../service/articulo.service'
+
+
 import { Router, ActivatedRoute } from '@angular/router';
+import { ArticuloService } from 'src/app/service/articulo.service';
+import { Articulo } from 'src/model/articulo';
 
 @Component({
   selector: 'app-articulos',
@@ -35,7 +37,7 @@ export class ArticulosComponent implements OnInit {
     console.log(id)
     this.articuloService.enviarProducto(id,1).subscribe(res=>{
       console.log(res)
-      this.router.navigate(['shop']);
+      this.router.navigate(['articulo','shop']);
 
     })
   }
