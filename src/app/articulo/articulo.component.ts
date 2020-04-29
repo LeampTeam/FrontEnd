@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ArticuloService} from '../service/articulo.service';
-import {Articulo} from '../../model/articulo'
+import { Articulo } from 'src/model/articulo';
+
 
 @Component({
   selector: 'app-articulo',

@@ -37,7 +37,7 @@ export class ArticulosComponent implements OnInit {
     console.log(id)
     this.articuloService.enviarProducto(id,1).subscribe(res=>{
       console.log(res)
-      this.router.navigate(['articulo','shop']);
+      this.router.navigate(['shop']);
 
     })
   }
