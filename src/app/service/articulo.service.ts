@@ -32,6 +32,9 @@ export class ArticuloService {
     }
     return this.http.post<any>('http://127.0.0.1:4000/shop/cargaProductos/',producto)
   }
+  getArticulosPuntera():Observable<any>{
+    return this.http.get<any>('http://127.0.0.1:4000/producto/getProductosPuntera')
+   }
 
 
 

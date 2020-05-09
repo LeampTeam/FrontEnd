@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CarroCompraComponent } from './carro-compra/carro-compra.component';
 import { ArticuloComponent } from './articulo/articulo.component';
 import { ArticulosComponent } from './articulos/articulos.component';
+import { ArticuloPunteraComponent } from './articulo-puntera/articulo-puntera.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ArticulosComponent } from './articulos/articulos.component';
     HomeComponent,
     CarroCompraComponent,
     ArticuloComponent,
-    ArticulosComponent
+    ArticulosComponent,
+    ArticuloPunteraComponent
 
 
   ],
