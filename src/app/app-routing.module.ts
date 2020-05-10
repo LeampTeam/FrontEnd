@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ArticuloComponent } from './articulo/articulo.component';
 import { CarroCompraComponent } from './carro-compra/carro-compra.component';
 import { ArticulosComponent } from './articulos/articulos.component';
+import { ArticuloPunteraComponent } from './articulo-puntera/articulo-puntera.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'articulos', component: ArticulosComponent },
   { path: '', component: HomeComponent },
   { path: 'articulo/:id',component:ArticuloComponent},
-  { path: 'shop',component: CarroCompraComponent }
+  { path: 'shop',component: CarroCompraComponent },
+  { path: 'puntera',component: ArticuloPunteraComponent }
 ];
 
 @NgModule({

@@ -1,1 +1,20 @@
-<p>articulo-puntera works!</p>
+<app-navbar></app-navbar>
+
+<div class="row row-cols-1 row-cols-md-4">
+  <div *ngFor="let item of Articulos" class="col mb-4">
+
+      <div class="card h-100">
+        <a routerLink={{item.ruta}}>
+        <img src={{item.img}} class="card-img-top" height="200" alt="imagen no cargada">
+      </a>
+        <div class="card-body">
+          <h5 style="display: inline;" class="card-title">{{item.name}} {{item.marca}} {{item.fragancia}}</h5>
+          <span class="badge badge-info" style="float:right;">{{item.categoria}}</span>
+          <p class="card-text">{{item.description}}</p>
+          <!-- <button class="btn btn-info" id={{item.id}} (click)="enviarProducto($event)">$ {{item.price}} <i class="fas fa-cart-plus" ></i></button> -->
+          <span class="badge badge-dark" style="float:right;">{{item.code}}</span>
+        </div>
+      </div>
+
+  </div>
+</div>

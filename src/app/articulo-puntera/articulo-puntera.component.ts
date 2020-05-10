@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticuloService } from '../service/articulo.service';
 
 @Component({
   selector: 'app-articulo-puntera',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticuloPunteraComponent implements OnInit {
 
-  constructor() { }
+  public Articulos:Array<any>
+
+  constructor(private articuloService:ArticuloService) { }
 
   ngOnInit() {
+   this.articuloService.getArticulosPuntera().subscribe(articulos =>{
+      this.Articulos=articulos
+    })
+
   }
 
 }
