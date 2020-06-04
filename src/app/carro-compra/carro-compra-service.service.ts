@@ -13,4 +13,8 @@ export class CarroCompraServiceService {
   obtenerArticulosShop(){
     return this.http.get<any>('http://127.0.0.1:4000/shop/enviarArticulos')
   }
+
+  generarCompra(){
+    return this.http.get<any>('http://127.0.0.1:4000/shop/confirmarCompra')
+  }
 }

@@ -3,30 +3,38 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { TokenStoreService } from './token-store.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthInterceptorService implements HttpInterceptor {
   private token:string;
-  constructor(private router: Router, private tokenStore: TokenStoreService) {
-    this.tokenStore.select$()
-      .subscribe(token => this.token = token);
+  constructor(private router: Router) {
+
   }
   public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const authHeader = { Authorization:this.token };
-    const authReq = req.clone({ setHeaders: authHeader });
-    return next.handle(authReq)
-      .pipe(catchError(this.handleError.bind(this)));
-  }
-  private handleError(err) {
-    const unauthorized_code = 403;
-    if (err instanceof HttpErrorResponse) {
-      if (err.status === unauthorized_code) {
-        this.router.navigate(['login']);
-      }
+    const token: string = localStorage.getItem('currentUser');
+
+    let request = req;
+
+    if (token) {
+      request = req.clone({
+        setHeaders: {
+          authorization:  token
+        }
+      });
     }
-    return throwError(err);
+
+    return next.handle(request).pipe(
+      catchError((err: HttpErrorResponse) => {
+
+        if (err.status === 403) {
+          this.router.navigateByUrl('/login');
+        }
+
+        return throwError( err );
+
+      })
+    );
   }
 }

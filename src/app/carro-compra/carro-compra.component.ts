@@ -12,12 +12,16 @@ export class CarroCompraComponent implements OnInit {
   public Articulos:Array<any>
   public usuario:Usuario
 
-  constructor(private articuloService:CarroCompraServiceService) { }
+  constructor(private carroCompraService:CarroCompraServiceService) { }
 
   ngOnInit() {
-    this.articuloService.obtenerArticulosShop().subscribe(res =>{
+    this.carroCompraService.obtenerArticulosShop().subscribe(res =>{
       this.Articulos=res;
     })
   }
+  confirmarCompra(event){
+    this.carroCompraService.generarCompra().subscribe(res=>{
 
+    })
+  }
 }

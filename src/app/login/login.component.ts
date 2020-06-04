@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ArticuloService } from '../service/articulo.service';
-import { TokenStoreService } from './token-store.service';
+
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   public tipo:string;
 
   constructor( private formBuilder: FormBuilder,private articuloService:ArticuloService,
-    private tokenStore:TokenStoreService,route: ActivatedRoute ) {
+  route: ActivatedRoute ) {
       console.log(route)
       route.url.subscribe(url=>this.tipo=url[0].path)
     }
@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit {
     this.articuloService.sendLoguin(user)
     .subscribe(res => {
       console.log(res)
-      this.tokenStore.dispatch(res.token)});
+      localStorage.setItem('currentUser', res.token);
+      });
 
   }
   public getError(controlName: string): string {
