@@ -9,14 +9,14 @@
   <!-- Loguearse -->
   <div id="login">
     <div id="boton" class="container col-md-12 row justify-content-end">
-      <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#Registro"
-        href="formularioregistro.html">Registrate</a>
+      <a routerLink="/registrar" routerLinkActive="active"type="button" class="btn btn-primary"
+        >Registrate</a>
   </div>
 
   <!-- Registrarse -->
     <div id="boton" class="container col-md-12 row justify-content-end">
-      <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#InicioSesion"
-        href="formularioingreso.html">Iniciar Sesion</a>
+      <a type="button" class="btn btn-primary"
+      routerLink="/login" routerLinkActive="active">Iniciar Sesion</a>
     </div>
   </div>
 </form>
@@ -28,10 +28,10 @@
       <a id="boton1" class="nav-link active btn btn-primary" onclick="precionarBoton(1)" href="#">Inicio</a>
     </li> -->
     <li class="nav-item">
-      <a id="boton2" class="nav-link btn btn-primary"  routerLink="products/articulos" routerLinkActive="active">Productos</a>
+      <a id="boton2" class="nav-link btn btn-primary"  routerLink="/products/articulos" routerLinkActive="active">Productos</a>
     </li>
     <li class="nav-item">
-      <a id="boton3" class="nav-link btn btn-primary" routerLink="products/articulos" routerLinkActive="active">Promos</a>
+      <a id="boton3" class="nav-link btn btn-primary" routerLink="/products/articulos" routerLinkActive="active">Promos</a>
     </li>
   </ul>
 </div>

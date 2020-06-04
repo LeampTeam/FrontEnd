@@ -10,12 +10,12 @@ import { ArticuloPunteraComponent } from './articulo-puntera/articulo-puntera.co
 import { ProductosComponent } from './productos/productos.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent,
-    children:[
+  {path:'',component:HomeComponent},
+
     { path: 'login', component: LoginComponent },
     { path: 'registrar', component: LoginComponent },
-  ]
-  },
+
+
   {path:'products',component:ProductosComponent,
     children:[
       { path: 'articulos', component: ArticulosComponent },

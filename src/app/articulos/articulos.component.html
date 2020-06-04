@@ -21,5 +21,5 @@
 
 <h6>Todos nuestro productos</h6>
 <div *ngFor="let item of Articulos">
-  <app-carousel-producto [Articulos]="item"></app-carousel-producto>
+  <app-carousel-producto (envio)=" enviarProducto($event)" [Articulos]="item"></app-carousel-producto>
 </div>
