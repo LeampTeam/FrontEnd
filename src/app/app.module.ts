@@ -15,7 +15,9 @@ import { CarroCompraComponent } from './carro-compra/carro-compra.component';
 import { ArticuloComponent } from './articulo/articulo.component';
 import { ArticulosComponent } from './articulos/articulos.component';
 import { ArticuloPunteraComponent } from './articulo-puntera/articulo-puntera.component';
-
+import { CarouselProductoComponent } from './carousel-producto/carousel-producto.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductosComponent } from './productos/productos.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,11 @@ import { ArticuloPunteraComponent } from './articulo-puntera/articulo-puntera.co
     CarroCompraComponent,
     ArticuloComponent,
     ArticulosComponent,
-    ArticuloPunteraComponent
+    ArticuloPunteraComponent,
+    CarouselProductoComponent,
+    ProductosComponent
+
+
 
 
   ],
@@ -36,7 +42,8 @@ import { ArticuloPunteraComponent } from './articulo-puntera/articulo-puntera.co
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [
     {

@@ -1,0 +1,51 @@
+<!-- <ngb-carousel class="bg-info">
+  <ng-template *ngFor="let item of Articulos" class="animate__animated animate__bounce animate__delay-2s" ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src={{item.img}} alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h5 style="display: inline;" class="card-title">{{item.name}} {{item.marca}} {{item.fragancia}}</h5>
+      <span class="badge badge-info" style="float:right;">{{item.categoria}}</span>
+      <p class="card-text">{{item.description}}</p>
+      <button class="btn btn-info" id={{item.id}} >$ {{item.price}} <i class="fas fa-cart-plus" ></i></button>
+      <span class="badge badge-dark" style="float:right;">{{item.code}}</span>
+    </div>
+  </ng-template>
+
+</ngb-carousel> -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+
+      <div *ngFor="let it of [1,1,1,1];let i =index" [ngClass]="{'active': i==0}"  class="carousel-item">
+        <div  class="row row-cols-1 row-cols-md-4">
+          <div *ngFor="let item of Articulos;let j =index" class="col mb-4">
+
+              <div *ngIf="j<(i*4)+4 && j>=i*4" class="card h-100 ">
+                <a routerLink={{item.ruta}}>
+                <img src={{item.img}} class="card-img-top" height="200" alt="imagen no cargada">
+              </a>
+                <div class="card-body">
+                  <h5 style="display: inline;" class="card-title">{{item.name}} {{item.marca}} {{item.fragancia}}</h5>
+                  <span class="badge badge-info" style="float:right;">{{item.categoria}}</span>
+                  <p class="card-text">{{item.description}}</p>
+                  <button class="btn btn-info" id={{item.id}} (click)="enviarProducto($event)">$ {{item.price}} <i class="fas fa-cart-plus" ></i></button>
+                  <span class="badge badge-dark" style="float:right;">{{item.code}}</span>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

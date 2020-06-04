@@ -96,6 +96,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "node_module/animate.css/animate.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [

@@ -1,9 +1,9 @@
-<app-navbar></app-navbar>
 
-<div class="row row-cols-1 row-cols-md-4">
+
+<!-- <div class="row row-cols-1 row-cols-md-4">
   <div *ngFor="let item of Articulos" class="col mb-4">
 
-      <div class="card h-100">
+      <div class="card h-100 ">
         <a routerLink={{item.ruta}}>
         <img src={{item.img}} class="card-img-top" height="200" alt="imagen no cargada">
       </a>
@@ -17,4 +17,9 @@
       </div>
 
   </div>
+</div> -->
+
+<h6>Todos nuestro productos</h6>
+<div *ngFor="let item of Articulos">
+  <app-carousel-producto [Articulos]="item"></app-carousel-producto>
 </div>

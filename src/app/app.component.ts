@@ -15,11 +15,7 @@ export class AppComponent {
 
   }
   ngOnInit() {
-    var rutaslash=this.router.url;
-    if(rutaslash!='/'){
-      this.ruta=true
-    }
-    console.log('ruta',this.router.url)
+
 
   }
 
