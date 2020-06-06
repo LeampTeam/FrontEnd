@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ProfileService } from './profile.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +11,7 @@ import { ProfileService } from './profile.service';
 export class ProfileComponent implements OnInit {
 public img:string
 uploadForm: FormGroup
-  constructor(private formBuilder: FormBuilder,private profileService:ProfileService) { }
+  constructor(private formBuilder: FormBuilder,private profileService:ProfileService,private router: Router) { }
 
   ngOnInit() {
     this.uploadForm = this.formBuilder.group({
@@ -34,6 +35,13 @@ uploadForm: FormGroup
       (res) => console.log(res),
       (err) => console.log(err)
     );
+  }
+  cerrarSession(){
+    localStorage.removeItem('currentUser')
+    localStorage.removeItem('currentEmail')
+    localStorage.removeItem('currentImg')
+
+    this.router.navigate(['/'])
   }
 
 }

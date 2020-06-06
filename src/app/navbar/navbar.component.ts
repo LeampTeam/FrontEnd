@@ -7,16 +7,19 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public esHome:boolean=false
+  public estalogueado:boolean=false
+
   constructor(private router: Router
     ,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    var rutaslash=this.router.url;
-    if(rutaslash!='/'){
-      this.esHome=true
+    var rutaslash=localStorage.getItem('currentUser');
+
+    if(rutaslash){
+      this.estalogueado=true
     }
-    console.log('ruta',this.router.url)
+
   }
+
 
 }

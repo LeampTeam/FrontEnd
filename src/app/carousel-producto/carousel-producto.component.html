@@ -16,7 +16,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
 
-      <div *ngFor="let it of [1,1,1,1];let i =index" [ngClass]="{'active': i==0}"  class="carousel-item">
+      <div *ngFor="let it of slideCant;let i =index" [ngClass]="{'active': i==0}"  class="carousel-item">
         <div  class="row row-cols-1 row-cols-md-4">
           <div *ngFor="let item of Articulos;let j =index" class="col mb-4">
 
