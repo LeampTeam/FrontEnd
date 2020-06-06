@@ -1,0 +1,25 @@
+
+<div class="dropdown" style="margin-left: 5px;margin-right: 5px;">
+  <div   id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src={{img}} class='imgRedonda' />
+
+  </div>
+  <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenu2">
+    <a class="dropdown-item" href="#">Mi Informacion</a>
+    <form class="dropdown-item" [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
+
+      <div class="upload-btn-wrapper">
+        Cambiar Imagen
+        <button class="boton-standar-rw"><i class="fas fa-camera"></i></button>
+        <input class="upload-file-buton" type="file"  name="profile"  (change)="onFileSelect($event)">
+       </div>
+
+    </form>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" routerLink="/products/shop">Carro de Compra</a>
+  <a class="dropdown-item" href="#">Historial Compra</a>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="#">Cerrar Sesion</a>
+  </div>
+</div>
+

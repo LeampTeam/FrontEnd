@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
     .subscribe(res => {
       console.log(res)
       localStorage.setItem('currentUser', res.token);
+      localStorage.setItem('currentEmail', res.email);
+      localStorage.setItem('currentImg', res.img);
       });
 
   }

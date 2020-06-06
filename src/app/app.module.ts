@@ -18,6 +18,7 @@ import { ArticuloPunteraComponent } from './articulo-puntera/articulo-puntera.co
 import { CarouselProductoComponent } from './carousel-producto/carousel-producto.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductosComponent } from './productos/productos.component';
+import { ProfileComponent } from './navbar/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductosComponent } from './productos/productos.component';
     ArticulosComponent,
     ArticuloPunteraComponent,
     CarouselProductoComponent,
-    ProductosComponent
+    ProductosComponent,
+    ProfileComponent
 
 
 
