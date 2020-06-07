@@ -21,6 +21,8 @@
 <div class="animate__animated animate__fadeIn ">
 <h6>Todos nuestro productos</h6>
 <div *ngFor="let item of Articulos">
-  <app-carousel-producto (envio)=" enviarProducto($event)" [Articulos]="item"></app-carousel-producto>
+  <h2>{{item[0].categoria}}</h2>
+<app-carousel-producto (envio)=" enviarProducto($event)" [numberCarousel]="'a'+item[0].id" [Articulos]="item">
+</app-carousel-producto>
 </div>
 </div>

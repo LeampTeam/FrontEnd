@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class CarouselProductoComponent implements OnInit {
 
   @Input() Articulos=[]
+  @Input() numberCarousel:string
   @Output() envio=new EventEmitter()
   public slideCant:Array<number>=[]
   constructor() { }
@@ -17,6 +18,7 @@ export class CarouselProductoComponent implements OnInit {
     for(let i =0;i<cant;i++){
       this.slideCant.push(1)
     }
+    this.numberCarousel.trim()
 
   }
   enviarProducto(event){
