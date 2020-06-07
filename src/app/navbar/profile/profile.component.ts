@@ -32,8 +32,15 @@ uploadForm: FormGroup
     formData.append('file', this.uploadForm.get('profile').value);
 
     this.profileService.guardarImagen(formData).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err)
+      (res) =>{
+        console.log(res)
+        if(res.mensaje=='ok'){
+          localStorage.setItem('currentImg', res.img)
+          this.router.navigate(['products/articulos']);
+          this.ngOnInit()
+        }
+      }
+
     );
   }
   cerrarSession(){
