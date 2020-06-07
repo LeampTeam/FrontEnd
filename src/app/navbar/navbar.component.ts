@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     var rutaslash=localStorage.getItem('currentUser');
-
+    this.email=localStorage.getItem('currentEmail')
 
     if(rutaslash){
       this.estalogueado=true
