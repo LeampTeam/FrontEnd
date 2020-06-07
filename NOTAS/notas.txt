@@ -1,0 +1,5 @@
+Materiales para Angular
+https://material.angular.io/components/categories
+
+Libreria css "animate"
+https://animate.style/
