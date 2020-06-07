@@ -27,3 +27,8 @@ header{
 #boton{
   margin-top: 10px;
 }
+
+#boton2:hover{
+  animation: bounce;
+  
+}
